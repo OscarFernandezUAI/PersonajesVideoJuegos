@@ -1,6 +1,4 @@
-﻿using PersonajesVideoJuegos;
-
-namespace PersonajesVideoJuegos
+﻿namespace PersonajesVideoJuegos
 {
     public class Program
     {
