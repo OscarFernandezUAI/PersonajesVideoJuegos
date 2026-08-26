@@ -1,6 +1,6 @@
 ﻿namespace PersonajesVideoJuegos
 {
-    // ===================== PROTOTYPE (interfaz) =====================
+    //interfaz
     public interface IPersonaje
     {
         IPersonaje Clonar();

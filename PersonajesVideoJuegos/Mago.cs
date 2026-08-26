@@ -1,6 +1,6 @@
 ﻿namespace PersonajesVideoJuegos
 {
-    // ===================== CONCRETE PROTOTYPE: MAGO =====================
+    //CONCRETE MAGO
     public class Mago : Personaje
     {
         public int Mana { get; set; }

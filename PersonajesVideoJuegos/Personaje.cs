@@ -1,6 +1,6 @@
 ﻿namespace PersonajesVideoJuegos
 {
-    // ===================== CLASE ABSTRACTA =====================
+    //CLASE ABSTRACTA
     public abstract class Personaje : IPersonaje
     {
         public string Nombre { get; set; } = string.Empty;

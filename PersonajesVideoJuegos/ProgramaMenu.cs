@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PersonajesVideoJuegos
 {
-    // ===================== PROGRAMA / MENU (Cliente) =====================
+    //MENU (representa la clase Cliente)
     public class ProgramaMenu
     {
         private List<Personaje> personajes = new List<Personaje>();
@@ -37,7 +37,6 @@ namespace PersonajesVideoJuegos
             }
         }
 
-        // -------- Opcion 1: Crear plantilla --------
         private void CrearPlantilla()
         {
             Console.WriteLine("\n--- Crear plantilla de personaje ---");
@@ -66,7 +65,6 @@ namespace PersonajesVideoJuegos
             Console.WriteLine("Plantilla creada correctamente.");
         }
 
-        // -------- Opcion 2: Clonar (uso central del patron Prototype) --------
         private void ClonarPersonaje()
         {
             if (!HayPersonajes()) return;
@@ -92,7 +90,6 @@ namespace PersonajesVideoJuegos
             Console.WriteLine("Personaje clonado y agregado a la lista.");
         }
 
-        // -------- Opcion 3: Modificar --------
         private void ModificarPersonaje()
         {
             if (!HayPersonajes()) return;
@@ -129,7 +126,6 @@ namespace PersonajesVideoJuegos
             Console.WriteLine("Personaje modificado correctamente.");
         }
 
-        // -------- Opcion 4: Listar --------
         private void ListarPersonajes()
         {
             if (!HayPersonajes()) return;
@@ -151,9 +147,6 @@ namespace PersonajesVideoJuegos
             return true;
         }
 
-        // ===================== VALIDACIONES DE ENTRADA =====================
-
-        // Lee un entero validando que sea numerico y que este dentro de un rango
         private int LeerEntero(string mensaje, int min, int max)
         {
             int valor;
@@ -181,7 +174,6 @@ namespace PersonajesVideoJuegos
             return valor;
         }
 
-        // Lee texto validando que no este vacio y que no sea un numero
         private string LeerTexto(string mensaje)
         {
             string entrada;
@@ -211,9 +203,7 @@ namespace PersonajesVideoJuegos
 
             return entrada;
         }
-
-        // Version opcional para texto (para clonar): permite dejar vacio para no
-        // modificar, pero si se ingresa algo, no debe ser un numero
+                
         private string? LeerTextoOpcional(string mensaje)
         {
             Console.Write(mensaje);
@@ -229,9 +219,7 @@ namespace PersonajesVideoJuegos
 
             return entrada;
         }
-
-        // Version opcional para campos numericos (para clonar): permite dejar vacio
-        // para no modificar, pero si se ingresa algo, debe ser un numero entero
+               
         private int? LeerEnteroOpcional(string mensaje)
         {
             Console.Write(mensaje);
@@ -245,6 +233,4 @@ namespace PersonajesVideoJuegos
             return null;
         }
     }
-}
-
 }
