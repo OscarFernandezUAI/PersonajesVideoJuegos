@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PersonajesVideoJuegos
-{
-    //MENU (representa la clase Cliente)
+﻿namespace PersonajesVideoJuegos
+{    
     public class ProgramaMenu
     {
         private List<Personaje> personajes = new List<Personaje>();
@@ -53,12 +48,12 @@ namespace PersonajesVideoJuegos
             if (tipo == 1)
             {
                 int defensa = LeerEntero("Ingrese la defensa (mayor a 0): ", 1, int.MaxValue);
-                nuevoPersonaje = new Guerrero { Nombre = nombre, Vida = vida, Ataque = ataque, Defensa = defensa };
+                nuevoPersonaje = new Guerrero(nombre, vida, ataque, defensa);
             }
             else
             {
                 int mana = LeerEntero("Ingrese el mana (mayor a 0): ", 1, int.MaxValue);
-                nuevoPersonaje = new Mago { Nombre = nombre, Vida = vida, Ataque = ataque, Mana = mana };
+                nuevoPersonaje = new Mago(nombre, vida, ataque, mana);
             }
 
             personajes.Add(nuevoPersonaje);
@@ -73,7 +68,7 @@ namespace PersonajesVideoJuegos
             int indice = LeerEntero($"Ingrese el numero de personaje a clonar (1-{personajes.Count}): ", 1, personajes.Count);
 
             Personaje original = personajes[indice - 1];
-            Personaje copia = (Personaje)original.Clonar(); // <-- Clonacion via Prototype
+            Personaje copia = (Personaje)original.Clonar();
 
             Console.WriteLine("Personaje clonado. Puede modificar la copia (dejar igual = no aplica cambios).");
 
@@ -146,7 +141,7 @@ namespace PersonajesVideoJuegos
             }
             return true;
         }
-
+               
         private int LeerEntero(string mensaje, int min, int max)
         {
             int valor;
@@ -203,7 +198,7 @@ namespace PersonajesVideoJuegos
 
             return entrada;
         }
-                
+
         private string? LeerTextoOpcional(string mensaje)
         {
             Console.Write(mensaje);
@@ -219,7 +214,7 @@ namespace PersonajesVideoJuegos
 
             return entrada;
         }
-               
+              
         private int? LeerEnteroOpcional(string mensaje)
         {
             Console.Write(mensaje);
